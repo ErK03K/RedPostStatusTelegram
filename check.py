@@ -2,7 +2,7 @@ import requests as r, json, re
 from time import sleep
 
 
-urlTelegram = 'https://api.telegram.org/bot1416430550:AAH7qXE1WyQkwXY5yRqNAglG4nYD2E8G2KE/sendMessage'
+urlTelegram = 'https://api.telegram.org/bot<BOT_API_KEY>/sendMessage'
 
 
 
@@ -20,7 +20,7 @@ def cStatusp(guide):
     f = [x.replace('<h5>','').replace('&nbsp;',' ').replace('</h5>','').replace('.','-') for x in re.findall(r'<h5>.{1,150}</h5>',vc)]
     for update in reversed(f):
         if update != data[guide]:
-            tgdata = {'chat_id':'560110547', 'text':f'\N{white heavy check mark} : {update}'}
+            tgdata = {'chat_id':'<CHAT_ID>', 'text':f'\N{white heavy check mark} : {update}'}
             s.post(urlTelegram, data=tgdata)
             with open('status.json', 'w', newline='') as guides:
                 data[guide] = update
