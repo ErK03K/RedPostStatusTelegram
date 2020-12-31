@@ -14,7 +14,7 @@ except:
         json.dump(data, guides)
 
 
-urlTelegram = 'https://api.telegram.org/bot1416430550:AAH7qXE1WyQkwXY5yRqNAglG4nYD2E8G2KE/sendMessage'
+urlTelegram = 'https://api.telegram.org/bot<BOT_API_KEY>/sendMessage'
 
 
 def appendguide(guide, filename='status.json'):
@@ -118,11 +118,8 @@ def index():
 
         return Response('Ok', status=200)
     else:
-        return '<h1>Test</h1>'
+        return '<h1>MÉTODO: GET</h1>'
 
-    #msg = {'chat_id':'560110547', 'text':'Pito'}
-    #r.post(urlTelegram, data=msg)
-    #sleep(5)
 
 
 
