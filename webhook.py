@@ -81,11 +81,6 @@ def getlastMsg(msg):
     text = msg['message']['text']
     return text,chat_id
 
-@app.route('/telegram', methods=['GET'])
-def telegram():
-    with open('status.json', 'r') as f:
-        return jsonify(json.loads(f.read()))
-
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
